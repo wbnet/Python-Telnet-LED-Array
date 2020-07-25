@@ -1,5 +1,12 @@
-
 #!/usr/bin/env python
+
+# Uses Python, telnet and RegEx
+# to read Cisco switch interface receive load,
+# convert to a percentage
+# and display on Scroll pHAT HD (LED array).
+
+# On 100 Mbps switch port
+# x percent = x Mbps
 
 import getpass
 import sys
@@ -74,5 +81,3 @@ scrollphathd.write_string(rxpct, x=0, y=0, font=None, letter_spacing=1, brightne
 
 scrollphathd.show()
 time.sleep(4)
-
-
