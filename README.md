@@ -1,13 +1,13 @@
 # Python-Telnet-LED-Array
 Using Scroll pHAT HD to show Cisco switch interface load
 
-# Uses Python, telnet and RegEx
-# to read Cisco switch interface receive load,
-# convert to a percentage
-# and display on Scroll pHAT HD (LED array).
+Uses Python, telnet and RegEx
+to read Cisco switch interface receive load,
+convert to a percentage
+and display on Scroll pHAT HD (LED array).
 
-# On 100 Mbps switch port
-# x percent = x Mbps
+On 100 Mbps switch port
+x percent = x Mbps
 
 
 ---- Example output ----
