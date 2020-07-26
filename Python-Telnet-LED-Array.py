@@ -18,12 +18,12 @@ import time
 import scrollphathd
 
 HOST = "10.0.90.103"
-# user = raw_input("Enter your telnet username: ")
-# password = getpass.getpass()
+user = raw_input("Enter your telnet username: ")
+password = getpass.getpass()
 
-user = "john"
-password = "TempPass"
-mysecret = "TempSecret"
+# user = "john"
+# password = "TempPass"
+# mysecret = "TempSecret"
 
 tn = telnetlib.Telnet(HOST)
 
@@ -33,9 +33,11 @@ if password:
     tn.read_until("Password: ")
     tn.write(password + "\n")
 
-tn.write("enable\n")
-# tn.write("TempSecret\n")
-tn.write(mysecret + "\n")
+# "username john privilege 15" added to switches,
+# so enable password not required.
+
+# tn.write("enable\n")
+# tn.write(mysecret + "\n")
 
 tn.write("show interfaces Fa1/0/37 | include load\n")
 tn.write("exit\n")
@@ -50,27 +52,20 @@ print x
 txload = x[0]
 rxload = x[1]
 
-print "txload"
-print txload
-
-print "rxload"
-print rxload
+print txload + " - txload"
+print rxload + " - rxload"
 
 rxpct = 100 * (float(rxload) / 255)
-print "float value"
-print rxpct
+print str(rxpct) + " - float value"
 
 rxpct = round(rxpct)
-print "round value"
-print rxpct
+print str(rxpct) + " - round value"
 
 rxpct = int(rxpct)
-print "int value"
-print rxpct
+print str(rxpct) + " - int value"
 
 rxpct = str(rxpct)
-print "str value"
-print rxpct
+print rxpct + " - str value"
 
 
 # Display on LED array
